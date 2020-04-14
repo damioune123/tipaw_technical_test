@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import ContactForm from '../ContactForm/ContactForm';
 import {postContactAction} from "../../../actions/contactActions";
 import { connect } from 'react-redux';
+import styles from './style.module.css';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
 
 const mapDispatchToProps = dispatch => ({
     postContactAction: payload => dispatch(postContactAction(payload)),
@@ -41,9 +45,23 @@ class ContactPage extends Component{
         alert(formattedError);
     };
     render(){
-        return(<ContactForm onSubmit={(values)=>{
-            this.props.postContactAction(values);
-        }}/>)
+        return(
+            <div>
+                <div className={styles.ruban}>
+                    <span className={styles.question}>Vous avez une question ?</span> <br/>
+                    <span className={styles.subQuestion}>N’hésitez pas à nous contacter via ce formulaire.</span>
+
+                </div>
+                <Card>
+                    <CardContent>
+                        <ContactForm onSubmit={(values)=>this.props.postContactAction(values)}/>
+                    </CardContent>
+                    <CardActions>
+                    </CardActions>
+                </Card>
+
+            </div>
+        )
     }
 
 }

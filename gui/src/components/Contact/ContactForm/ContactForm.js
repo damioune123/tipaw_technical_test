@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import TextField from '@material-ui/core/TextField';
 import { Form, Field } from 'react-final-form'
+import Button from '@material-ui/core/Button';
+
 class ContactForm extends Component{
     constructor(props) {
         super(props);
@@ -14,61 +17,58 @@ class ContactForm extends Component{
                 render={({ handleSubmit, form, submitting, pristine, values }) => (
                     <form onSubmit={handleSubmit}>
                         <div>
-                            <label>Last Name</label>
                             <Field
+                                label="Last name"
                                 name="lastName"
-                                component="input"
+                                component={TextField}
                                 type="text"
                             />
                         </div>
                         <div>
-                            <label>First Name</label>
                             <Field
+                                label="First name"
                                 name="firstName"
-                                component="input"
+                                component={TextField}
                                 type="text"
                             />
                         </div>
 
                         <div>
-                            <label>Email</label>
                             <Field
+                                label="Email"
                                 name="email"
-                                component="input"
+                                component={TextField}
                                 type="email"
                             />
                         </div>
                         <div>
-                            <label>Phone number</label>
                             <Field
+                                label="Phone number"
                                 name="phoneNumber"
-                                component="input"
+                                component={TextField}
                                 type="text"
                             />
                         </div>
                         <div>
-                            <label>Object</label>
                             <Field
+                                label="Object"
                                 name="messageObject"
-                                component="input"
+                                component={TextField}
                                 type="text"
                             />
                         </div>
                         <div>
-                            <label>Message</label>
                             <Field
+                                label="Message"
                                 name="messageContent"
-                                component="input"
-                                type="text"
+                                component={TextField}
+                                multiline
+                                rows={5}
                             />
                         </div>
-
-                        <div className="buttons">
-                            <button type="submit" disabled={submitting}>
+                            <Button variant="contained" color="primary"  type="submit" disabled={submitting}>
                                 Submit
-                            </button>
-                        </div>
-                        <pre>{JSON.stringify(values, 0, 2)}</pre>
+                            </Button>
                     </form>
                 )}
             />

@@ -1,20 +1,53 @@
 import React, { Component } from 'react';
-import BNavbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import styles from'./style.module.css';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from "@material-ui/core/Toolbar";
+import IconButton from "@material-ui/core/IconButton";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+import { withStyles } from "@material-ui/core/styles";
+
+import style from'./style.module.css';
 import logo from './logo-tipaw.svg';
+
+const styles = theme => ({
+    root: {
+        flexGrow: 1,
+    },
+    menuButton: {
+        marginRight: theme.spacing(2),
+    },
+    contact: {
+        flexGrow: 1,
+    },
+});
+
 class Navbar extends Component {
     render(){
+        const { classes } = this.props;
         return(
-            <BNavbar bg="light" expand="lg" className={styles.navbar}>
-                <Nav.Link className={styles.logo} href="/">
-                    <img  src={logo} alt="Tipaw logo"/> Tipaw
-                </Nav.Link>
-                <Nav.Link className={styles.contact} href="/contact">
-                    Contact
-                </Nav.Link>
-            </BNavbar>
+            <AppBar position="static">
+                <Toolbar className={style.navbar}>
+                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu"  href="/">
+                        <img  src={logo} alt="Tipaw logo"/>
+                    </IconButton>
+                    <a href="/contact" className={`${style.link}`}>
+                        <span variant="h6" className={`${style.contact}`} >
+                          Contact
+                        </span>
+                    </a>
+
+                </Toolbar>
+            </AppBar>
+            // <BNavbar bg="light" expand="lg" className={styles.navbar}>
+            //     <Nav.Link className={styles.logo} href="/">
+            //         <img  src={logo} alt="Tipaw logo"/> Tipaw
+            //     </Nav.Link>
+            //     <Nav.Link className={styles.contact} href="/contact">
+            //         Contact
+            //     </Nav.Link>
+            // </BNavbar>
+
         );
     }
 }
-export default Navbar;
+export default withStyles(styles, { withTheme: true })(Navbar);
