@@ -2,6 +2,8 @@
 
 ## Access the Demo on heroku 
 https://tipawtechnicaltest.herokuapp.com/
+
+A pipeline is setup to deploy the app on every commit on the master branch of this repository.
 ## To launch production locally 
 1. Install docker-compose  : https://docs.docker.com/compose/install/
 
