@@ -12,6 +12,7 @@ import Alert from '@material-ui/lab/Alert';
 import Snackbar from '@material-ui/core/Snackbar';
 import Grid from '@material-ui/core/Grid';
 import dogContact from './dog-contact.png';
+import {Paper} from "@material-ui/core";
 
 const mapDispatchToProps = dispatch => ({
     postContactAction: payload => dispatch(postContactAction(payload)),
@@ -20,6 +21,8 @@ const mapStateToProps = (state) => ({...state.contacts});
 const styles = theme => ({
     gridContainer: {
         flexGrow: 1,
+        marginTop: -20,
+        height: 80
     },
     paper: {
         height: 140,
@@ -92,32 +95,35 @@ class ContactPage extends Component{
     render(){
         const { classes } = this.props;
         return(
+            <div>
+                <Snackbar open={this.state.toasterOpen} autoHideDuration={6000} onClose={this.handleCloseAlert}>
+                    <Alert className={classes.alert} onClose={this.handleCloseAlert} severity={this.state.toasterSeverity} >
+                        {this.state.toasterMessage}
+                    </Alert>
+                </Snackbar>
+                <div className={style.ruban}>
+                    <span className={style.question}>Do you have a question ?</span> <br/>
+                    <span className={style.subQuestion}>Do not hesitate to reach us through this form.</span>
+                </div>
                 <Grid container className={classes.gridContainer}>
-                    <Grid item xs={12}>
-                        <Snackbar open={this.state.toasterOpen} autoHideDuration={6000} onClose={this.handleCloseAlert}>
-                            <Alert className={classes.alert} onClose={this.handleCloseAlert} severity={this.state.toasterSeverity} >
-                                {this.state.toasterMessage}
-                            </Alert>
-                        </Snackbar>
-                        <div className={style.ruban}>
-                            <span className={style.question}>Do you have a question ?</span> <br/>
-                            <span className={style.subQuestion}>Do not hesitate to reach us through this form.</span>
-                        </div>
-                        <Card>
+                    <Grid item xs={10}>
+                        <Paper style={{ padding: 16 }} elevation={3}>
                             <Grid container justify="center" spacing={2}>
-                                    <Grid className={style.dogContact} item xs={6}>
-                                        <img src ={dogContact} />
+                                <Grid className={style.dogContact} item xs={5}  spacing={2}>
+                                    <img src ={dogContact} style={{   height: '100%', width: '100%'}} />
 
-                                    </Grid>
-                                    <Grid item  xs={6}>
-                                            <CardContent>
-                                                <ContactForm onSubmit={(values)=> this.props.postContactAction(values)}/>
-                                            </CardContent>
-                                    </Grid>
+                                </Grid>
+                                <Grid item  xs={5}>
+                                    <CardContent>
+                                        <ContactForm onSubmit={(values)=> this.props.postContactAction(values)}/>
+                                    </CardContent>
+                                </Grid>
                             </Grid>
-                        </Card>
+                        </Paper>
                     </Grid>
                 </Grid>
+            </div>
+
 
         )
     }
