@@ -6,6 +6,7 @@
   "scripts": {
     "start": "env NODE_ENV=dev node app.js",
     "prod": "env NODE_ENV=prod node app.js ",
+    "heroku": "env NODE_ENV=heroku node app.js ",
     "test": "env NODE_ENV=test mocha --recursive -S --bail --exit"
   },
   "author": "",

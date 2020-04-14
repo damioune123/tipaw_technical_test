@@ -39,5 +39,5 @@ const contactSchema = new mongoose.Schema({
 // Utils
 // *****************************************************************************
 
-const Contact = mongoose.model('Norm', contactSchema);
+const Contact = mongoose.model('Contact', contactSchema);
 module.exports = Contact;
