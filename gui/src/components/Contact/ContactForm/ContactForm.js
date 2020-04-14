@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TextField from '@material-ui/core/TextField';
+import { TextField } from 'final-form-material-ui';
 import { Form, Field } from 'react-final-form'
 import Button from '@material-ui/core/Button';
 
@@ -21,6 +21,7 @@ class ContactForm extends Component{
                                 label="Last name"
                                 name="lastName"
                                 component={TextField}
+                                required={true}
                                 type="text"
                             />
                         </div>
@@ -29,6 +30,7 @@ class ContactForm extends Component{
                                 label="First name"
                                 name="firstName"
                                 component={TextField}
+                                required={true}
                                 type="text"
                             />
                         </div>
@@ -38,6 +40,7 @@ class ContactForm extends Component{
                                 label="Email"
                                 name="email"
                                 component={TextField}
+                                required={true}
                                 type="email"
                             />
                         </div>
@@ -54,6 +57,7 @@ class ContactForm extends Component{
                                 label="Object"
                                 name="messageObject"
                                 component={TextField}
+                                required={true}
                                 type="text"
                             />
                         </div>
@@ -62,6 +66,7 @@ class ContactForm extends Component{
                                 label="Message"
                                 name="messageContent"
                                 component={TextField}
+                                required={true}
                                 multiline
                                 rows={5}
                             />

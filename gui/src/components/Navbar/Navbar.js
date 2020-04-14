@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
 import { withStyles } from "@material-ui/core/styles";
 
 import style from'./style.module.css';
@@ -31,22 +29,12 @@ class Navbar extends Component {
                         <img  src={logo} alt="Tipaw logo"/>
                     </IconButton>
                     <a href="/contact" className={`${style.link}`}>
-                        <span variant="h6" className={`${style.contact}`} >
+                        <span className={`${style.contact}`} >
                           Contact
                         </span>
                     </a>
-
                 </Toolbar>
             </AppBar>
-            // <BNavbar bg="light" expand="lg" className={styles.navbar}>
-            //     <Nav.Link className={styles.logo} href="/">
-            //         <img  src={logo} alt="Tipaw logo"/> Tipaw
-            //     </Nav.Link>
-            //     <Nav.Link className={styles.contact} href="/contact">
-            //         Contact
-            //     </Nav.Link>
-            // </BNavbar>
-
         );
     }
 }
