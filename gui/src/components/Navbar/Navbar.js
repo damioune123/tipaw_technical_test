@@ -3,6 +3,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import { withStyles } from "@material-ui/core/styles";
+import { Link } from 'react-router-dom';
 
 import style from'./style.module.css';
 import logo from './logo-tipaw.svg';
@@ -25,14 +26,16 @@ class Navbar extends Component {
         return(
             <AppBar position="static">
                 <Toolbar className={style.navbar}>
-                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu"  href="/">
-                        <img  src={logo} alt="Tipaw logo"/>
-                    </IconButton>
-                    <a href="/contact" className={`${style.link}`}>
+                    <Link to="/">
+                        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu"  >
+                            <img  src={logo} alt="Tipaw logo"/>
+                        </IconButton>
+                    </Link>
+                    <Link to="/contact" className={`${style.link}`}>
                         <span className={`${style.contact}`} >
                           Contact
                         </span>
-                    </a>
+                    </Link>
                 </Toolbar>
             </AppBar>
         );
