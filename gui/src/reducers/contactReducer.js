@@ -1,5 +1,4 @@
 import {
-    POST_CONTACT_BEGIN,
     POST_CONTACT_SUCCESS,
     POST_CONTACT_FAILURE
 } from "../actions/contactActions";
@@ -15,14 +14,6 @@ export default function contactReducer(
     action
 ) {
     switch (action.type) {
-        case POST_CONTACT_BEGIN:
-
-            return {
-                ...state,
-                loading: true,
-                error: null
-            };
-
         case POST_CONTACT_SUCCESS:
             return {
                 ...state,

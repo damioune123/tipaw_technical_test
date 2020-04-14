@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import ContactForm from './ContactForm';
-import { postContact } from "../../actions/contactActions";
+import {postContactAction} from "../../actions/contactActions";
 import { connect } from 'react-redux';
 
 const mapDispatchToProps = dispatch => ({
-    postContact: payload => dispatch(postContact(payload)),
+    postContactAction: payload => dispatch(postContactAction(payload)),
 });
 const mapStateToProps = (state) => ({...state.contacts});
 
@@ -42,7 +42,7 @@ class ContactPage extends Component{
     };
     render(){
         return(<ContactForm onSubmit={(values)=>{
-            this.props.postContact(values);
+            this.props.postContactAction(values);
         }}/>)
     }
 
