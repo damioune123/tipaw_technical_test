@@ -1,0 +1,35 @@
+.logo {
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility!important;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    font-size: 0;
+}
+
+.navbar {
+    top: 0px;
+    left: 0px;
+    width: 1920px;
+    height: 117px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 30px #0000001A;
+    opacity: 1;
+}
+
+.contact {
+    top: 17px;
+    left: 1269px;
+    width: 94px;
+    height: 22px;
+    text-align: left;
+    font: Regular 16px/85px Open Sans;
+    letter-spacing: 0px;
+    color: #B9B9B9;
+    opacity: 1;
+}

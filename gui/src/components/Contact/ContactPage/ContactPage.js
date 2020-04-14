@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ContactForm from './ContactForm';
-import {postContactAction} from "../../actions/contactActions";
+import ContactForm from '../ContactForm/ContactForm';
+import {postContactAction} from "../../../actions/contactActions";
 import { connect } from 'react-redux';
 
 const mapDispatchToProps = dispatch => ({

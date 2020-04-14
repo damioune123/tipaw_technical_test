@@ -1,0 +1,8 @@
+.panelDefault {
+    border-color: #ddd;
+    background: #282c34;
+    color: blue;
+}
+.panelBody {
+    padding: 15px;
+}

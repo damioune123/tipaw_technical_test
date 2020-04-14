@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
 import {BrowserRouter,Route,Switch} from 'react-router-dom';
-import HomePage from './components/HomePage';
-import ContactPage from './components/Contact/ContactPage';
+import HomePage from './components/Homepage/HomePage';
+import ContactPage from './components/Contact/ContactPage/ContactPage';
 
 class App extends Component {
   render() {
