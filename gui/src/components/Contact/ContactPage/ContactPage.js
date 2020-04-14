@@ -10,13 +10,25 @@ import CardContent from '@material-ui/core/CardContent';
 import { withStyles } from "@material-ui/core/styles";
 import Alert from '@material-ui/lab/Alert';
 import Snackbar from '@material-ui/core/Snackbar';
+import Grid from '@material-ui/core/Grid';
+import dogContact from './dog-contact.png';
 
 const mapDispatchToProps = dispatch => ({
     postContactAction: payload => dispatch(postContactAction(payload)),
 });
 const mapStateToProps = (state) => ({...state.contacts});
 const styles = theme => ({
-    root: {
+    gridContainer: {
+        flexGrow: 1,
+    },
+    paper: {
+        height: 140,
+        width: 100,
+    },
+    control: {
+        padding: 2,
+    },
+    alert: {
         width: '100%',
         '& > * + *': {
             marginTop: theme.spacing(2),
@@ -80,24 +92,33 @@ class ContactPage extends Component{
     render(){
         const { classes } = this.props;
         return(
-            <div>
-                <Snackbar open={this.state.toasterOpen} autoHideDuration={6000} onClose={this.handleCloseAlert}>
-                    <Alert className={classes.root} onClose={this.handleCloseAlert} severity={this.state.toasterSeverity} >
-                        {this.state.toasterMessage}
-                    </Alert>
-                </Snackbar>
-                <div className={style.ruban}>
-                    <span className={style.question}>Do you have a question ?</span> <br/>
-                    <span className={style.subQuestion}>Do not hesitate to reach us through this form.</span>
-                </div>
-                <Card>
-                    <CardContent>
-                        <ContactForm onSubmit={(values)=> this.props.postContactAction(values)}/>
-                    </CardContent>
-                    <CardActions>
-                    </CardActions>
-                </Card>
-            </div>
+                <Grid container className={classes.gridContainer}>
+                    <Grid item xs={12}>
+                        <Snackbar open={this.state.toasterOpen} autoHideDuration={6000} onClose={this.handleCloseAlert}>
+                            <Alert className={classes.alert} onClose={this.handleCloseAlert} severity={this.state.toasterSeverity} >
+                                {this.state.toasterMessage}
+                            </Alert>
+                        </Snackbar>
+                        <div className={style.ruban}>
+                            <span className={style.question}>Do you have a question ?</span> <br/>
+                            <span className={style.subQuestion}>Do not hesitate to reach us through this form.</span>
+                        </div>
+                        <Card>
+                            <Grid container justify="center" spacing={2}>
+                                    <Grid className={style.dogContact} item xs={6}>
+                                        <img src ={dogContact} />
+
+                                    </Grid>
+                                    <Grid item  xs={6}>
+                                            <CardContent>
+                                                <ContactForm onSubmit={(values)=> this.props.postContactAction(values)}/>
+                                            </CardContent>
+                                    </Grid>
+                            </Grid>
+                        </Card>
+                    </Grid>
+                </Grid>
+
         )
     }
 }
