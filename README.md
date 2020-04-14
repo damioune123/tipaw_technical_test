@@ -13,14 +13,23 @@ Note : make sure both port 80 and 27017 are available.
 
 ## To launch development setup
 1. launch terminal : 
-$ git clone https://github.com/damioune123/tipaw_technical_test.git 
-$ cd tipaw_technical_test
+
+git clone https://github.com/damioune123/tipaw_technical_test.git 
+
+cd tipaw_technical_test
+
 2. Setup backend :
+
 $ cd api && npm i
-$ npm run start
+
+ npm run start
+
 3. Launch frontend in development mode (HBR server enabled):
-$ cd gui && npm i
-$ npm run serve:dev
+
+cd gui && npm i
+
+ npm run serve:dev
 
 ## Launch backend mocha unit test
-$ cd api && npm run test
+
+cd api && npm run test
