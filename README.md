@@ -2,10 +2,14 @@
 
 ## To launch production locally 
 1. Install docker-compose  : https://docs.docker.com/compose/install/
+
 2. launch terminal : 
-$ git clone https://github.com/damioune123/tipaw_technical_test.git 
-$ cd tipaw_technical_test
-$ docker-compose up 
+
+git clone https://github.com/damioune123/tipaw_technical_test.git 
+
+cd tipaw_technical_test
+
+docker-compose up 
 
 The web app frontend will be delivered at http://localhost
 
@@ -20,9 +24,9 @@ cd tipaw_technical_test
 
 2. Setup backend :
 
-$ cd api && npm i
+cd api && npm i
 
- npm run start
+npm run start
 
 3. Launch frontend in development mode (HBR server enabled):
 
