@@ -1,0 +1,12 @@
+version: '2'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: local.Dockerfile
+    ports:
+      - "80:80"
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
