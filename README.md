@@ -1,5 +1,7 @@
 #  Tipaw technical test (Contact page)
 
+## Access the Demo on heroku 
+https://tipawtechnicaltest.herokuapp.com/
 ## To launch production locally 
 1. Install docker-compose  : https://docs.docker.com/compose/install/
 
