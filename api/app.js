@@ -6,8 +6,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const logger = require('./utils/logger');
-//const path = require('path');
-console.log(__dirname)
+const path = require('path');
+
 //connect mongoose to the mongodb
 mongoose.connect(process.env.DATABASE_URI, {
     useNewUrlParser: true,
@@ -27,8 +27,8 @@ const http = require('http').createServer(app);
 app.use(cors());
 app.use(bodyParser.json());
 
-// Serve static html, js, css, and image files from the built frontend 'dist'
-//app.use(express.static(path.normalize(path.join(__dirname,'../gui/dist'))));
+// Serve static html, js, css, and image files from the built frontend 'build'
+app.use(express.static(path.normalize(path.join(__dirname,'../gui/build'))));
 
 //add routes for REST API
 app.use('/api', require('./routes'));
